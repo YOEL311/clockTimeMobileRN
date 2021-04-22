@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "654715552859",
+    "project_id": "time-clock-manager",
+    "storage_bucket": "time-clock-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654715552859:android:8f23eed09475b5140eab7e",
+        "android_client_info": {
+          "package_name": "com.clocktimemobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654715552859-9rh56ubaj7hlfivfmi6gmhvu766v9mk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiYZn2s2gVfx34It9XjjDN2oNCcmzLZFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654715552859-9rh56ubaj7hlfivfmi6gmhvu766v9mk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
