@@ -25,11 +25,9 @@ var getPosition = function () {
   return new Promise(function (resolve, reject) {
     Geolocation.getCurrentPosition(
       position => {
-        console.log(position);
         resolve(position);
       },
       error => {
-        console.log(error.code, error.message);
         reject();
       },
       {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},

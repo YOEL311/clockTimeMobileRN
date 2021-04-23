@@ -43,7 +43,7 @@ const sendExitOrEnter = () => {
       time: Date.now(),
       location: {
         lat: position.coords.latitude,
-        long: position.coords.longitude,
+        lng: position.coords.longitude,
       },
     };
     firestore().collection('employs').doc(ID).collection('times').add(data);
