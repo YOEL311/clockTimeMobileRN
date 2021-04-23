@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
-import {
-  Modal,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-} from 'react-native';
+import {Modal, StyleSheet, Text, View, TextInput} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {signIn} from '../store/action';
+import {Button} from 'react-native-elements';
 
 const SignInModel = () => {
   const user = useSelector(state => state.user);
@@ -29,13 +23,13 @@ const SignInModel = () => {
             keyboardType="numeric"
             placeholder="123-456-789"
           />
-          <Pressable
-            style={[styles.button, styles.buttonClose]}
+
+          <Button
+            title="SignIn"
             onPress={() => {
               numberUser.length > 4 && dispatch(signIn(numberUser));
-            }}>
-            <Text style={styles.textStyle}>SignIn</Text>
-          </Pressable>
+            }}
+          />
         </View>
       </View>
     </Modal>
@@ -71,11 +65,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
   },
 });
 

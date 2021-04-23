@@ -1,15 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import SignInModel from './Components/SignInModel';
+import SignInModel from '../components/SignInModel';
 import {Header} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {sendExitOrEnter} from './store/action';
+import {sendExitOrEnter} from '../store/action';
 
 const App = () => {
   const user = useSelector(state => state.user);
   const statusUser = useSelector(state => state.statusUser);
-  console.log('🚀 ~ file: App.js ~ line 24 ~ App ~ statusUser', statusUser);
   const dispatch = useDispatch();
   const iconName = statusUser === 'enter' ? 'location-exit' : 'location-enter';
   const stringButton =
@@ -20,7 +19,7 @@ const App = () => {
     <View style={{flex: 1}}>
       <Header
         centerComponent={{
-          text: user ? `hello ${user.name}` : 'Hello Guest',
+          text: user ? `Hello ${user.name}` : 'Hello Guest',
           style: {color: '#fff'},
         }}
       />

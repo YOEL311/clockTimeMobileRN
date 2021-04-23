@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './src/App';
+import MainScreen from './src/screens/MainScreen';
 import reducer from './src/store/reducer';
 import {Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -22,7 +22,7 @@ const store = createStore(
 
 const WarperApp = () => (
   <Provider store={store}>
-    <App />
+    <MainScreen />
   </Provider>
 );
 
