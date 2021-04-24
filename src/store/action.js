@@ -36,14 +36,14 @@ const getStatusUser = () => {
 const sendExitOrEnter = () => {
   return async (dispatch, getState) => {
     const ID = getState()?.user?.id;
-    await requestLocationPermission();
-    const position = await getPosition();
+    const permission = await requestLocationPermission();
+    const position = permission && (await getPosition());
 
     const data = {
       time: Date.now(),
       location: {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
+        lat: position?.coords?.latitude || 1,
+        lng: position?.coords?.longitude || 1,
       },
     };
     firestore().collection('employs').doc(ID).collection('times').add(data);
@@ -52,10 +52,10 @@ const sendExitOrEnter = () => {
 
 const signIn = numberUser => {
   return async dispatch => {
-    const cityRef = firestore().collection('employs').doc(numberUser);
-    const doc = await cityRef.get();
+    const employRef = firestore().collection('employs').doc(numberUser);
+    const doc = await employRef.get();
     if (!doc.exists) {
-      console.log('No such document!');
+      ToastAndroid.show('Login failed', ToastAndroid.SHORT);
     } else {
       ToastAndroid.show('Sign In Success', ToastAndroid.SHORT);
       dispatch(sigInInSuccess({...doc.data(), id: doc.id}));
